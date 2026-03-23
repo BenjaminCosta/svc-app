@@ -31,7 +31,7 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
     <div className="min-h-screen flex flex-col bg-background">
 
       {/* ── Progress bar ─────────────────────────────────── */}
-      <div className="px-6 pt-6 pb-6">
+      <div className="px-5 pt-5 pb-5 sm:px-6 sm:pt-6 sm:pb-6">
         <div className="flex items-center justify-between mb-3">
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
             Level {currentLevel + 1} of {totalLevels}
@@ -49,7 +49,7 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
       </div>
 
       {/* ── Content ──────────────────────────────────────── */}
-      <div key={currentLevel} className="flex-1 flex flex-col px-6 pb-6 overflow-y-auto">
+      <div key={currentLevel} className="flex-1 flex flex-col px-5 pb-5 sm:px-6 sm:pb-6 overflow-y-auto">
 
         {/* Level name hero */}
         <div
@@ -57,7 +57,7 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
           style={{ animationDelay: "0s", animationFillMode: "both" }}
         >
           <h2
-            className="text-6xl font-black leading-none tracking-tight"
+            className="text-5xl sm:text-6xl font-black leading-none tracking-tight"
             style={{ color: accentColor }}
           >
             {level.name}
@@ -78,7 +78,7 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
 
         {/* Accent divider bar */}
         <div
-          className="h-0.75 rounded-full mb-10 animate-fade-up"
+          className="h-0.75 rounded-full mb-8 sm:mb-10 animate-fade-up"
           style={{
             backgroundColor: accentColor,
             animationDelay: "0.06s",
@@ -88,34 +88,34 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
 
         {/* ── DEFINITION ──────────────────────────────────── */}
         <div
-          className="mb-10 animate-fade-up"
+          className="mb-8 sm:mb-10 animate-fade-up"
           style={{ animationDelay: "0.1s", animationFillMode: "both" }}
         >
           <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
             Definition
           </p>
-          <p className="text-3xl leading-snug text-foreground font-bold">
+          <p className="text-2xl sm:text-3xl leading-snug text-foreground font-bold">
             {level.definition}
           </p>
         </div>
 
         {/* ── TIME SCALE ──────────────────────────────────── */}
         <div
-          className="mb-10 animate-card-enter"
+          className="mb-8 sm:mb-10 animate-card-enter"
           style={{ animationDelay: "0.16s", animationFillMode: "both" }}
         >
           <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
             Time Scale
           </p>
           <div
-            className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full border"
+            className="inline-flex items-center gap-2.5 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full border"
             style={{
               backgroundColor: `${accentColor}12`,
               borderColor: `${accentColor}35`,
             }}
           >
             <Clock className="w-4 h-4 shrink-0" style={{ color: accentColor }} />
-            <span className="text-lg font-bold" style={{ color: accentColor }}>
+            <span className="text-base sm:text-lg font-bold" style={{ color: accentColor }}>
               {level.timeScale}
             </span>
           </div>
@@ -130,7 +130,7 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
             Real Example
           </p>
           <div
-            className="rounded-2xl p-5 border-l-4"
+            className="rounded-2xl p-4 sm:p-5 border-l-4"
             style={{
               backgroundColor: `${accentColor}0a`,
               borderLeftColor: accentColor,
@@ -141,7 +141,7 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
                 className="w-5 h-5 shrink-0 mt-0.5 opacity-35"
                 style={{ color: accentColor }}
               />
-              <p className="text-lg leading-relaxed text-foreground">
+              <p className="text-base sm:text-lg leading-relaxed text-foreground">
                 {level.example}
               </p>
             </div>
@@ -151,19 +151,19 @@ export function FrameworkScreen({ currentLevel, onNext, onBack }: FrameworkScree
       </div>
 
       {/* ── Navigation ───────────────────────────────────── */}
-      <div className="px-6 pb-8 pt-4 flex gap-3 border-t border-border bg-background">
+      <div className="px-5 pb-7 pt-3 sm:px-6 sm:pb-8 sm:pt-4 flex gap-3 border-t border-border bg-background">
         {currentLevel > 0 && (
           <Button
             variant="outline"
             onClick={onBack}
-            className="flex-1 h-14"
+            className="flex-1 h-12 sm:h-14"
           >
             Back
           </Button>
         )}
         <Button
           onClick={onNext}
-          className="flex-1 h-14 text-xl font-semibold"
+          className="flex-1 h-12 sm:h-14 text-lg sm:text-xl font-semibold"
         >
           {currentLevel < totalLevels - 1 ? (
             <>
